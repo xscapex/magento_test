@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -7,7 +8,9 @@ import time
 
 # Function to fetch the web page content using Selenium
 def get_page_content(url):
-    driver = webdriver.Chrome(ChromeDriverManager().install()) # Change to the appropriate driver for your browser
+
+    service = Service(executable_path = ChromeDriverManager().install())
+    driver = webdriver.Chrome(Cservice=service) # Change to the appropriate driver for your browser
     driver.get(url)
     # time.sleep(5)
     # driver.get(url)
