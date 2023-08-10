@@ -10,7 +10,7 @@ import time
 def get_page_content(url):
 
     service = Service(executable_path = ChromeDriverManager().install())
-    driver = webdriver.Chrome(Cservice=service) # Change to the appropriate driver for your browser
+    driver = webdriver.Chrome(service=service) # Change to the appropriate driver for your browser
     driver.get(url)
     # time.sleep(5)
     # driver.get(url)
