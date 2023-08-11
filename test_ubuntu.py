@@ -15,6 +15,8 @@ def get_page_content(url):
     options.add_argument('--disable-extensions')
     options.add_argument("--disable-popup-blocking")
     driver = webdriver.Chrome(service=service,options=options) # Change to the appropriate driver for your browser
+    # driver = webdriver.Chrome(service=service) # Change to the appropriate driver for your browser
+
     driver.get(url)
     # time.sleep(5)
     # driver.get(url)
@@ -25,6 +27,7 @@ def get_page_content(url):
     # language_button.click()
     page_content = driver.page_source
     driver.quit()
+    print(page_content)
     return page_content
 
 
