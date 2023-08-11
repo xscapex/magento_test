@@ -10,7 +10,7 @@ import time
 # Function to fetch the web page content using Selenium
 def get_page_content(url):
 
-    service = Service(executable_path = ChromeDriverManager().install())
+    service = Service(executable_path = '/usr/bin/chromedriver')
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
