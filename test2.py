@@ -14,8 +14,8 @@ def get_page_content(url):
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
-    options.add_argument('--disable-extensions')
-    options.add_argument("--disable-popup-blocking")
+    # options.add_argument('--disable-extensions')
+    # options.add_argument("--disable-popup-blocking")
     driver = webdriver.Chrome(service=service,options=options) # Change to the appropriate driver for your browser
     driver.get(url)
     page_content = driver.page_source
