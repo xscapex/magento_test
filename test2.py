@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -10,7 +11,13 @@ import time
 def get_page_content(url):
 
     service = Service(executable_path = ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service) # Change to the appropriate driver for your browser
+    options = Options()
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument(f'user-agent={self.ua.random}')
+    options.add_argument('--disable-extensions')
+    options.add_argument("--disable-popup-blocking")
+    driver = webdriver.Chrome(service=service,options=options) # Change to the appropriate driver for your browser
     driver.get(url)
     # time.sleep(5)
     # driver.get(url)
