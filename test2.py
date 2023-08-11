@@ -11,12 +11,12 @@ import time
 def get_page_content(url):
 
     service = Service(executable_path = '/usr/bin/chromedriver')
-    options = Options()
+    options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     # options.add_argument('--disable-extensions')
     # options.add_argument("--disable-popup-blocking")
-    driver = webdriver.Chrome(service=service,options=options) # Change to the appropriate driver for your browser
+    driver = webdriver.Chrome(service=service,chrome_options=options) # Change to the appropriate driver for your browser
     driver.get(url)
     page_content = driver.page_source
     driver.quit()
